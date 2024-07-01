@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
+  },
+  "scripts": {
+    "tailwind": "npx tailwindcss -i ./src/css/tailwind.css -o ./src/css/style.css --watch"
+  },
+  "dependencies": {
+    "remixicon": "^4.3.0"
+  }
+}
