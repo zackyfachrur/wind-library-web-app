@@ -16,11 +16,10 @@
    <!-- End Navbar -->
    <!-- Main -->
    <main>
-      <div class="flex text-white justify-center items-center h-96 flex-col">
-         <h1 class="text-5xl font-bold mt-60">Hello World!</h1>
+      <div class="flex justify-center items-center h-96 flex-col">
+         <h1 class="text-5xl font-bold mt-60">Web Tiket!</h1>
          <p>Lorem ipsum dolor sit amet.</p>
-         <button class="bg-black px-5 py-2 mt-10 rounded-full border-2 hover:bg-transparent"
-            onclick="window.location.assign('product.php')">See
+         <button class=" px-5 py-2 mt-10 rounded-full border-2 hover:bg-transparent" onclick="window.location.assign('product.php')">See
             Product</button>
       </div>
    </main>
