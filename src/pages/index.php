@@ -14,7 +14,7 @@
    include('../components/navbar.php');
    ?>
    <!-- End Navbar -->
-   <h1 class="text-4xl font-bold flex justify-center items-center m-auto h-96">This page is unavailable 😏.</h1>
+   <h1 class="text-4xl font-bold flex justify-center items-center m-auto h-96">This page is unavailable 😉.</h1>
 </body>
 
 </html>
