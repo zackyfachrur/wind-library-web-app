@@ -2,9 +2,7 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="../css/style.css">
+   <?php include('../components/header.php') ?>
    <title>Store Web | Admin</title>
 </head>
 
@@ -17,9 +15,9 @@
    <!-- End Navbar -->
    <!-- Main -->
    <main class="flex items-center justify-center">
-      <!-- <h1 class="text-5xl font-bold text-red-700">Create Your Books</h1> -->
+      <img src="../img/logo-book.png" alt="">
       <div class="flex items-center justify-center w-full">
-         <form action="../db/AddBook.php" method="post" class="flex flex-row items-center justify-center py-32 bg-gray-200 rounded-b-3xl px-52">
+         <form action="../db/AddBook.php" method="post" class="flex flex-row items-center justify-center py-32 rounded-b-3xl px-52">
             <div class="flex flex-col">
                <?php for ($i = 0; $i < count($books_form["books_label"]); $i++) { ?>
                   <div class="flex gap-5 px-5 py-2">

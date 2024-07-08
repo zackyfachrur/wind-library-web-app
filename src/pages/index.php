@@ -2,9 +2,7 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="../css/style.css">
+   <?php include('../components/header.php') ?>
    <title>Store Web | Home</title>
 </head>
 
@@ -14,7 +12,10 @@
    include('../components/navbar.php');
    ?>
    <!-- End Navbar -->
-   <h1 class="text-4xl font-bold flex justify-center items-center m-auto h-96">This page is unavailable 😉.</h1>
+   <div class="container flex flex-row items-center justify-center w-full overflow-x-hidden">
+      <h1 class="flex items-center justify-center m-auto text-4xl font-bold h-96">This page is unavailable 😉.</h1>
+   </div>
+
 </body>
 
 </html>

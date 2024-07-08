@@ -26,7 +26,7 @@ $books_form = [
       "books_release",
    ],
    "books_input_placeholder" => [
-      "Your Books tiket",
+      "Your Books Ticket",
       "Your Books Name",
       "Your Books Description",
    ],
