@@ -2,28 +2,52 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="../css/style.css">
-   <title>Store Web | Contact</title>
+     <?php include('../components/header.php') ?>
+     <title>Store Web | Contact</title>
 </head>
 
 <body>
-   <!-- Navbar -->
-   <?php
+     <!-- Navbar -->
+     <?php
    include('../components/navbar.php');
+   include('../db/Book.php')
    ?>
-   <!-- End Navbar -->
-   <!-- Main -->
-   <main>
-      <div class="flex justify-center items-center h-96 flex-col">
-         <h1 class="text-5xl font-bold mt-60">Web Tiket!</h1>
-         <p>Lorem ipsum dolor sit amet.</p>
-         <button class=" px-5 py-2 mt-10 rounded-full border-2 hover:bg-transparent" onclick="window.location.assign('product.php')">See
-            Product</button>
-      </div>
-   </main>
-   <!-- End Main -->
+     <!-- End Navbar -->
+     <!-- Main -->
+     <main>
+          <div class="container flex flex-col items-center justify-center w-full h-full">
+               <table class="table border-2 table-striped">
+                    <tr class="font-bold text-white border-2 ">
+                         <th class="flex px-5 py-2"><i class="pr-2 ri-ticket-line"></i>Tiket Buku</th>
+                         <th class="px-5 py-2"><i class="pr-2 ri-book-2-line"></i>Nama Buku</th>
+                         <th class="px-5 py-2"><i class="pr-2 ri-blogger-line"></i>Deksripsi Buku</th>
+                         <th class="px-5 py-2"><i class="pr-2 ri-calendar-2-line"></i>Tanggal Rilis</th>
+                         <th></th>
+                         <th></th>
+                    </tr>
+                    <?php foreach ($results as $result) { ?>
+                    <tr class="font-bold text-white border-2">
+                         <td class="px-5 py-2"><?php echo $result['tiket_buku'] ?></td>
+                         <td class="px-5 py-2"><?php echo $result['nama_buku'] ?></td>
+                         <td class="px-5 py-2"><?php echo $result['deskripsi_buku'] ?></td>
+                         <td class="px-5 py-2"><?php echo $result['tanggal_rilis'] ?></td>
+                         <td><button
+                                   class="px-6 transition-all ease-in bg-white border-2 border-red-700 rounded-full text-red-700 cursor-pointer hover:translate-x-1"
+                                   onclick="window.location.assign('EditPage.php?id=<?php echo $result['tiket_buku'] ?>')">Edit</button>
+                         </td>
+                         <td><button
+                                   class="px-6 transition-all ease-inborder-2 border-red-700 bg-red-700 rounded-full text-white cursor-pointer hover:translate-x-1"
+                                   onclick="window.location.assign('../db/DeleteBook.php?id=<?php echo $result['tiket_buku'] ?>')">Delete</button>
+                         </td>
+                    </tr>
+                    <?php } ?>
+               </table>
+          </div>
+     </main>
+     <!-- End Main -->
+
+
+</body>
 </body>
 
 </html>
