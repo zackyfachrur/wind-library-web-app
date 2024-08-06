@@ -10,7 +10,7 @@ $log_validation = mysqli_query($connection, "SELECT nama_pengguna FROM tabel_pen
 
 if (isset($name_log) == $log_validation) {
    $log_result = mysqli_query($connection, "INSERT INTO tabel_pengguna (nama_pengguna, email_pengguna, pass_pengguna) VALUES ('$name_log','$email_log','$pass_log')");
-   header("Location:../pages/index.php");
+   header("Location:../admin/index.php");
 } else {
    echo "Data login tidak sesuai dengan data Register";
 }
