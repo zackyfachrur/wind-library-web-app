@@ -7,11 +7,11 @@
 </head>
 
 <body>
-   <!-- Navbar -->
+   <!-- NavbarAdmin -->
    <?php
-   include('../components/navbar.php');
+   include('../components/NavbarAdmin.php');
    ?>
-   <!-- End Navbar -->
+   <!-- End NavbarAdmin -->
    <div class="container flex flex-row items-center justify-center w-full overflow-x-hidden">
       <h1 class="flex items-center justify-center m-auto text-4xl font-bold h-96">This page is unavailable 😉.</h1>
    </div>

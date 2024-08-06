@@ -5,7 +5,7 @@ $books_tiket = $_GET['id'];
 $query = mysqli_query($connection, "DELETE FROM tabel_buku WHERE tiket_buku='$books_tiket'");
 
 if ($query) {
-     header('Location:../pages/BookPage.php');
+     header('Location:../admin/BookPage.php');
 } else {
      echo "Gagal delete data";
 }

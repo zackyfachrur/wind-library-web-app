@@ -12,5 +12,5 @@ $add_books = mysqli_query($connection, "INSERT INTO tabel_buku (tiket_buku, nama
 if (!$add_books) {
    echo "Gagal menambahkan buku";
 } else {
-   header('Location:../pages/BookPage.php');
+   header('Location:../admin/BookPage.php');
 }

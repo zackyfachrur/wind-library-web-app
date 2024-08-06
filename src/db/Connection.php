@@ -16,7 +16,8 @@ loadEnv();
 
 $server = "localhost";
 $username = "root";
-$pass = getenv("DB_PASS");
+$pass = "";
+// $pass = getenv("DB_PASS");
 $dbname = "db_tiket";
 
 $connection = mysqli_connect($server, $username, $pass, $dbname);
