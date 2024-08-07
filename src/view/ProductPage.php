@@ -21,13 +21,17 @@
           <!-- Start Product -->
           <section class="flex items-center justify-center w-full h-full m-auto">
                <div class="flex flex-col items-center justify-center gap-3 h-96">
-                    <h1 class="mt-10 text-4xl font-bold text-black">Product <span
-                              class="px-2 text-white bg-black rounded-full">Wind
+                    <h1 class="mt-10 text-4xl font-bold text-black">Product <span class="px-2 text-white bg-black rounded-full">Wind
                               Library</span>
                     </h1>
                </div>
           </section>
           <!-- End Product -->
+
+          <!-- Search -->
+
+          <!-- End Search -->
+
 
           <!-- Deksripsi -->
           <section></section>
