@@ -10,7 +10,7 @@
      <!-- NavbarAdmin -->
      <?php
      include('../components/NavbarAdmin.php');
-     include('../db/Book.php')
+     include('../db_admin/Book.php')
      ?>
      <!-- End NavbarAdmin -->
      <!-- Main -->
@@ -26,16 +26,20 @@
                          <th></th>
                     </tr>
                     <?php foreach ($results as $result) { ?>
-                         <tr class="font-bold text-white border-2">
-                              <td class="px-5 py-2"><?php echo $result['tiket_buku'] ?></td>
-                              <td class="px-5 py-2"><?php echo $result['nama_buku'] ?></td>
-                              <td class="px-5 py-2"><?php echo $result['deskripsi_buku'] ?></td>
-                              <td class="px-5 py-2"><?php echo $result['tanggal_rilis'] ?></td>
-                              <td><button class="px-6 transition-all ease-in bg-white border-2 border-red-700 rounded-full text-red-700 cursor-pointer hover:translate-x-1" onclick="window.location.assign('EditPage.php?id=<?php echo $result['tiket_buku'] ?>')">Edit</button>
-                              </td>
-                              <td><button class="px-6 transition-all ease-inborder-2 border-red-700 bg-red-700 rounded-full text-white cursor-pointer hover:translate-x-1" onclick="window.location.assign('../db/DeleteBook.php?id=<?php echo $result['tiket_buku'] ?>')">Delete</button>
-                              </td>
-                         </tr>
+                    <tr class="font-bold text-white border-2">
+                         <td class="px-5 py-2"><?php echo $result['tiket_buku'] ?></td>
+                         <td class="px-5 py-2"><?php echo $result['nama_buku'] ?></td>
+                         <td class="px-5 py-2"><?php echo $result['deskripsi_buku'] ?></td>
+                         <td class="px-5 py-2"><?php echo $result['tanggal_rilis'] ?></td>
+                         <td><button
+                                   class="px-6 transition-all ease-in bg-white border-2 border-red-700 rounded-full text-red-700 cursor-pointer hover:translate-x-1"
+                                   onclick="window.location.assign('EditPage.php?id=<?php echo $result['tiket_buku'] ?>')">Edit</button>
+                         </td>
+                         <td><button
+                                   class="px-6 transition-all ease-inborder-2 border-red-700 bg-red-700 rounded-full text-white cursor-pointer hover:translate-x-1"
+                                   onclick="window.location.assign('../db_admin/DeleteBook.php?id=<?php echo $result['tiket_buku'] ?>')">Delete</button>
+                         </td>
+                    </tr>
                     <?php } ?>
                </table>
           </div>

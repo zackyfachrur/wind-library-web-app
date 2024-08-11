@@ -17,7 +17,7 @@
      <main class="flex items-center justify-center">
           <img src="../img/logo-book.png" alt="">
           <div class="flex items-center justify-center w-full">
-               <form action="../db/AddBook.php" method="post" class="flex flex-row items-center justify-center py-32 rounded-b-3xl px-52">
+               <form action="../db_admin/AddBook.php" method="post" class="flex flex-row items-center justify-center py-32 rounded-b-3xl px-52">
                     <div class="flex flex-col">
                          <?php for ($i = 0; $i < count($books_form["books_label"]); $i++) { ?>
                               <div class="flex gap-5 px-5 py-2">

@@ -596,24 +596,20 @@ video {
   left: -24rem;
 }
 
-.right-20 {
-  right: 5rem;
-}
-
-.right-0 {
-  right: 0px;
-}
-
-.left-0 {
-  left: 0px;
-}
-
 .left-20 {
   left: 5rem;
 }
 
+.right-20 {
+  right: 5rem;
+}
+
 .top-20 {
   top: 5rem;
+}
+
+.top-0 {
+  top: 0px;
 }
 
 .bottom-20 {
@@ -624,16 +620,52 @@ video {
   bottom: 0px;
 }
 
-.-bottom-0 {
-  bottom: -0px;
+.bottom-24 {
+  bottom: 6rem;
 }
 
-.-bottom-10 {
-  bottom: -2.5rem;
+.bottom-28 {
+  bottom: 7rem;
 }
 
-.-bottom-28 {
-  bottom: -7rem;
+.bottom-36 {
+  bottom: 9rem;
+}
+
+.bottom-52 {
+  bottom: 13rem;
+}
+
+.bottom-72 {
+  bottom: 18rem;
+}
+
+.bottom-64 {
+  bottom: 16rem;
+}
+
+.-top-5 {
+  top: -1.25rem;
+}
+
+.-top-2 {
+  top: -0.5rem;
+}
+
+.top-32 {
+  top: 8rem;
+}
+
+.top-72 {
+  top: 18rem;
+}
+
+.top-80 {
+  top: 20rem;
+}
+
+.top-96 {
+  top: 24rem;
 }
 
 .-z-10 {
@@ -644,16 +676,12 @@ video {
   z-index: -20;
 }
 
-.z-50 {
-  z-index: 50;
-}
-
 .z-20 {
   z-index: 20;
 }
 
-.z-30 {
-  z-index: 30;
+.z-50 {
+  z-index: 50;
 }
 
 .m-auto {
@@ -662,6 +690,10 @@ video {
 
 .mb-20 {
   margin-bottom: 5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .ml-20 {
@@ -696,8 +728,8 @@ video {
   display: table;
 }
 
-.grid {
-  display: grid;
+.hidden {
+  display: none;
 }
 
 .h-20 {
@@ -706,6 +738,10 @@ video {
 
 .h-32 {
   height: 8rem;
+}
+
+.h-36 {
+  height: 9rem;
 }
 
 .h-80 {
@@ -728,6 +764,10 @@ video {
   width: 8rem;
 }
 
+.w-4\/5 {
+  width: 80%;
+}
+
 .w-60 {
   width: 15rem;
 }
@@ -748,14 +788,6 @@ video {
   width: 100vw;
 }
 
-.w-4\/5 {
-  width: 80%;
-}
-
-.w-3\/5 {
-  width: 60%;
-}
-
 .translate-y-20 {
   --tw-translate-y: 5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -771,6 +803,10 @@ video {
 
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-start {
@@ -891,6 +927,10 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.p-2 {
+  padding: 0.5rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -961,6 +1001,10 @@ video {
 
 .pt-10 {
   padding-top: 2.5rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .text-start {

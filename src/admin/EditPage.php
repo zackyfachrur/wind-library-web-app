@@ -1,5 +1,5 @@
 <?php
-include('../db/Connection.php');
+include('../db_admin/Connection.php');
 
 $id = $_GET['id'];
 
@@ -28,7 +28,7 @@ $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
      <main class="flex items-center justify-center">
           <img src="../img/logo-book.png" alt="">
           <div class="flex items-center justify-center w-full">
-               <form action="../db/UpdateBook.php" method="post" class="flex flex-row items-center justify-center py-32 rounded-b-3xl px-52">
+               <form action="../db_admin/UpdateBook.php" method="post" class="flex flex-row items-center justify-center py-32 rounded-b-3xl px-52">
                     <div class="flex flex-col">
                          <!-- Tiket Buku -->
                          <div class="flex gap-5 px-5 py-2">
