@@ -596,6 +596,14 @@ video {
   left: -24rem;
 }
 
+.bottom-1 {
+  bottom: 0.25rem;
+}
+
+.bottom-72 {
+  bottom: 18rem;
+}
+
 .left-20 {
   left: 5rem;
 }
@@ -604,68 +612,28 @@ video {
   right: 5rem;
 }
 
-.top-20 {
-  top: 5rem;
+.bottom-5 {
+  bottom: 1.25rem;
 }
 
-.top-0 {
-  top: 0px;
+.bottom-8 {
+  bottom: 2rem;
 }
 
-.bottom-20 {
-  bottom: 5rem;
+.bottom-12 {
+  bottom: 3rem;
 }
 
-.bottom-0 {
-  bottom: 0px;
+.bottom-16 {
+  bottom: 4rem;
 }
 
-.bottom-24 {
-  bottom: 6rem;
+.bottom-32 {
+  bottom: 8rem;
 }
 
-.bottom-28 {
-  bottom: 7rem;
-}
-
-.bottom-36 {
-  bottom: 9rem;
-}
-
-.bottom-52 {
-  bottom: 13rem;
-}
-
-.bottom-72 {
-  bottom: 18rem;
-}
-
-.bottom-64 {
-  bottom: 16rem;
-}
-
-.-top-5 {
-  top: -1.25rem;
-}
-
-.-top-2 {
-  top: -0.5rem;
-}
-
-.top-32 {
-  top: 8rem;
-}
-
-.top-72 {
-  top: 18rem;
-}
-
-.top-80 {
-  top: 20rem;
-}
-
-.top-96 {
-  top: 24rem;
+.bottom-40 {
+  bottom: 10rem;
 }
 
 .-z-10 {
@@ -712,8 +680,8 @@ video {
   margin-top: 5rem;
 }
 
-.mt-5 {
-  margin-top: 1.25rem;
+.mt-32 {
+  margin-top: 8rem;
 }
 
 .mt-52 {
@@ -768,10 +736,6 @@ video {
   width: 80%;
 }
 
-.w-60 {
-  width: 15rem;
-}
-
 .w-72 {
   width: 18rem;
 }
@@ -786,6 +750,22 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[800px\] {
+  width: 800px;
+}
+
+.w-\[\'300px\'\] {
+  width: '300px';
+}
+
+.w-3\/4 {
+  width: 75%;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .translate-y-20 {
@@ -815,6 +795,10 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-center {
@@ -849,20 +833,12 @@ video {
   gap: 24rem;
 }
 
-.self-center {
-  align-self: center;
-}
-
 .overflow-x-hidden {
   overflow-x: hidden;
 }
 
 .rounded-full {
   border-radius: 9999px;
-}
-
-.rounded-lg {
-  border-radius: 0.5rem;
 }
 
 .rounded-xl {
@@ -925,10 +901,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.p-2 {
-  padding: 0.5rem;
 }
 
 .px-2 {
@@ -999,10 +971,6 @@ video {
   padding-right: 0.5rem;
 }
 
-.pt-10 {
-  padding-top: 2.5rem;
-}
-
 .text-center {
   text-align: center;
 }
@@ -1057,6 +1025,10 @@ video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
 
 .text-black {
