@@ -9,21 +9,10 @@
      <title>NavbarAdmin</title>
 </head>
 
-<body>
-     <nav class="flex flex-col items-center justify-center w-screen h-32 m-auto bg-red-700">
-          <ul
-               class="flex flex-row items-center justify-center px-6 py-3 m-auto mt-2 font-bold text-white bg-white rounded-full gap-96">
-               <div class="flex gap-5 px-5 text-3xl text-red-700 bg-white">
-                    <h1><i class="ri-book-3-line"></i> WEB TIKET</h1>
-               </div>
-               <div class="pl-40">
-                    <label for="searchMovie"><i class="text-2xl text-red-700 ri-search-line"></i></label>
-                    <input type="search" placeholder="Search a book.." name="searchMovie" id="searchMovie"
-                         class="px-5 py-2 font-bold text-red-700 border-2 border-red-700 rounded-full outline-none">
-               </div>
-          </ul>
-          <ul class="flex flex-row items-center justify-center h-20 m-auto font-bold text-red-700">
-               <div class="flex gap-20 text-lg">
+<body class="flex transition-all ease-in-out justify-start items-start m-auto">
+     <nav class="flex flex-col items-center justify-center h-full m-auto bg-red-700 w-96">
+          <ul class="flex flex-col items-center justify-center h-screen m-auto font-bold text-red-700">
+               <div class="flex flex-col gap-20 text-lg">
                     <li class="px-6 transition-all ease-in bg-white rounded-full cursor-pointer hover:translate-x-1"
                          onclick="window.location.assign('aboutpage.php') ">
                          <i class="ri-home-4-line"></i>

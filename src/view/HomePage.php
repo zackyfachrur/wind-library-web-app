@@ -49,7 +49,7 @@
                               </div>
                          </button>
                          <button
-                              class="hover:translate-x-2 transition-all ease-in-out py-2 text-xl text-black font-bold bg-white border-2 border-black px-7 rounded-xl "
+                              class="py-2 text-xl font-bold text-black transition-all ease-in-out bg-white border-2 border-black hover:translate-x-2 px-7 rounded-xl "
                               onclick="GotoAbout()">
                               <h1>Learn More</h1>
                          </button>
@@ -159,9 +159,9 @@
      <!-- End Content -->
 
      <script>
-     function GotoAbout() {
-          window.location.assign('AboutPage.php');
-     };
+          function GotoAbout() {
+               window.location.assign('AboutPage.php');
+          };
      </script>
 </body>
 
