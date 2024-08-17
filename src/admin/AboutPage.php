@@ -16,15 +16,25 @@
      <main class="w-full">
           <section id="greetings">
                <div class="flex flex-col items-center justify-center gap-5 h-96">
-                    <h1 class="text-5xl font-bold mt-52">Website Administrator Ticket</h1>
+                    <h1 class="text-5xl font-bold text-black mt-52">Website Administrator Ticket</h1>
                     <div class="flex flex-col items-center justify-center">
                          <!-- <p class="text-base font-semibold">Website ini dibuat untuk memudahkan kita dalam
                   mempublikasikan buku di
                   era digital ini.</p> -->
-                         <button
-                              class="px-5 py-2 mt-10 font-bold text-white transition-all ease-in bg-red-700 border-2 border-red-700 rounded-full hover:bg-red-600 hover:border-red-300 "
-                              onclick="window.location.assign('bookpage.php')">See
-                              Administrator <i class="font-bold ri-arrow-right-line"></i></button>
+                         <div class="flex gap-3">
+                              <button
+                                   class="flex flex-row items-center justify-center gap-1 font-bold transition-all ease-in-out"
+                                   onclick="GotoAbout()">
+                                   <div
+                                        class="flex px-3 py-2 text-xl text-white bg-black rounded-s-xl hover:translate-x-2">
+                                        <h1>See Administrator</h1>
+                                   </div>
+                                   <div
+                                        class="flex px-3 py-2 text-sm text-white transition-all ease-in-out bg-black border-2 border-black rounded-e-xl">
+                                        <i class="ri-arrow-right-s-line"></i>
+                                   </div>
+                              </button>
+                         </div>
                     </div>
                </div>
           </section>

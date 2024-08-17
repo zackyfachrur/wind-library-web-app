@@ -68,20 +68,6 @@ $result = mysqli_fetch_all($showBook, MYSQLI_ASSOC);
                                    </li>
                               </ul>
 
-                              <script>
-                              const showCategories = document.getElementById('show-categories');
-
-                              function categoriesClick() {
-                                   if (showCategories.classList.contains('hidden')) {
-                                        showCategories.classList.add('flex');
-                                        showCategories.classList.remove('hidden');
-                                   } else {
-                                        showCategories.classList.add('hidden');
-                                        showCategories.classList.remove('flex');
-                                   }
-                              };
-                              </script>
-
                          </div>
                     </div>
 
@@ -122,6 +108,23 @@ $result = mysqli_fetch_all($showBook, MYSQLI_ASSOC);
           <!-- End Footer -->
      </main>
      <!-- End Content -->
+
+     <!-- JS -->
+
+     <script>
+     const showCategories = document.getElementById('show-categories');
+
+     function categoriesClick() {
+          if (showCategories.classList.contains('hidden')) {
+               showCategories.classList.add('flex');
+               showCategories.classList.remove('hidden');
+          } else {
+               showCategories.classList.add('hidden');
+               showCategories.classList.remove('flex');
+          }
+     };
+     </script>
+
 </body>
 
 </html>

@@ -15,32 +15,36 @@
      <!-- End NavbarAdmin -->
      <!-- Main -->
      <main class="w-full">
-          <div class="container flex flex-col items-center justify-center w-full h-full">
-               <table class="table border-2 table-striped">
-                    <tr class="font-bold text-white border-2 ">
-                         <th class="flex px-5 py-2"><i class="pr-2 ri-ticket-line"></i>Tiket Buku</th>
-                         <th class="px-5 py-2"><i class="pr-2 ri-book-2-line"></i>Nama Buku</th>
-                         <th class="px-5 py-2"><i class="pr-2 ri-blogger-line"></i>Deksripsi Buku</th>
-                         <th class="px-5 py-2"><i class="pr-2 ri-calendar-2-line"></i>Tanggal Rilis</th>
-                         <th></th>
-                         <th></th>
-                    </tr>
-                    <?php foreach ($results as $result) { ?>
-                         <tr class="font-bold text-white border-2">
-                              <td class="px-5 py-2"><?php echo $result['tiket_buku'] ?></td>
-                              <td class="px-5 py-2"><?php echo $result['nama_buku'] ?></td>
-                              <td class="px-5 py-2"><?php echo $result['deskripsi_buku'] ?></td>
-                              <td class="px-5 py-2"><?php echo $result['tanggal_rilis'] ?></td>
+          <div class="container items-center justify-center w-full h-full">
+               <table class="table border-2 table-striped table-borderless table-hover table-sm">
+                    <thead>
+                         <tr>
+                              <th class="w-32"> Tiket Buku</th>
+                              <th class="w-52">Nama Buku</th>
+                              <th class="w-72">Deksripsi Buku</th>
+                              <th class="w-52">Tanggal Rilis
+                              </th>
+                              <th class="w-52"></th>
+                         </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                         <?php foreach ($results as $result) { ?>
+                         <tr class="font-bold text-white border-2 ">
+                              <td><?php echo $result['tiket_buku'] ?></td>
+                              <td><?php echo $result['nama_buku'] ?></td>
+                              <td><?php echo $result['deskripsi_buku'] ?></td>
+                              <td><?php echo $result['tanggal_rilis'] ?></td>
                               <td><button
-                                        class="px-6 transition-all ease-in bg-white border-2 border-red-700 rounded-full text-red-700 cursor-pointer hover:translate-x-1"
+                                        class="px-6 text-black transition-all ease-in bg-white border-2 border-black rounded-full cursor-pointer hover:translate-x-1"
                                         onclick="window.location.assign('EditPage.php?id=<?php echo $result['tiket_buku'] ?>')">Edit</button>
-                              </td>
-                              <td><button
-                                        class="px-6 transition-all ease-inborder-2 border-red-700 bg-red-700 rounded-full text-white cursor-pointer hover:translate-x-1"
+
+                                   <button
+                                        class="px-6 text-white transition-all bg-black border-black rounded-full cursor-pointer ease-inborder-2 hover:translate-x-1"
                                         onclick="window.location.assign('./db/DeleteBook.php?id=<?php echo $result['tiket_buku'] ?>')">Delete</button>
                               </td>
                          </tr>
-                    <?php } ?>
+                         <?php } ?>
+                    </tbody>
                </table>
           </div>
      </main>

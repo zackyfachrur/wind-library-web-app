@@ -65,20 +65,6 @@ $result = mysqli_fetch_all($showBook, MYSQLI_ASSOC);
                                    </li>
                               </ul>
 
-                              <script>
-                                   const showCategories = document.getElementById('show-categories');
-
-                                   function categoriesClick() {
-                                        if (showCategories.classList.contains('hidden')) {
-                                             showCategories.classList.add('flex');
-                                             showCategories.classList.remove('hidden');
-                                        } else {
-                                             showCategories.classList.add('hidden');
-                                             showCategories.classList.remove('flex');
-                                        }
-                                   };
-                              </script>
-
                          </div>
                     </div>
 
@@ -95,18 +81,18 @@ $result = mysqli_fetch_all($showBook, MYSQLI_ASSOC);
                <?php
                foreach ($result as $results) {
                ?>
-                    <div class="px-5 py-2 text-center text-black border-2 border-black w-72 h-36 rounded-xl">
-                         <h1 class="text-xl font-bold"><?php echo $results['nama_buku']
+               <div class="px-5 py-2 text-center text-black border-2 border-black w-72 h-36 rounded-xl">
+                    <h1 class="text-xl font-bold"><?php echo $results['nama_buku']
                                                        ?></h1>
 
-                         <p class="font-bold capitalize"><i class="ri-book-line"></i> <?php echo $results['kategori_buku'] ?>
-                         </p>
-                         <p><?php echo $results['tanggal_rilis'] ?></p>
-                         <button
-                              class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2">Learn
-                              More
-                              <i class="ri-arrow-right-s-line"></i></button>
-                    </div>
+                    <p class="font-bold capitalize"><i class="ri-book-line"></i> <?php echo $results['kategori_buku'] ?>
+                    </p>
+                    <p><?php echo $results['tanggal_rilis'] ?></p>
+                    <button
+                         class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2">Learn
+                         More
+                         <i class="ri-arrow-right-s-line"></i></button>
+               </div>
                <?php  }
                ?>
           </section>
@@ -119,6 +105,22 @@ $result = mysqli_fetch_all($showBook, MYSQLI_ASSOC);
           <!-- End Footer -->
      </main>
      <!-- End Content -->
+
+     <!-- JS -->
+
+     <script>
+     const showCategories = document.getElementById('show-categories');
+
+     function categoriesClick() {
+          if (showCategories.classList.contains('hidden')) {
+               showCategories.classList.add('flex');
+               showCategories.classList.remove('hidden');
+          } else {
+               showCategories.classList.add('hidden');
+               showCategories.classList.remove('flex');
+          }
+     };
+     </script>
 </body>
 
 </html>
