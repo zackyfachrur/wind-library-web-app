@@ -39,7 +39,7 @@
                     <div class="flex gap-3">
                          <button
                               class="flex flex-row items-center justify-center gap-1 font-bold transition-all ease-in-out"
-                              onclick="GotoAbout()">
+                              onclick="GotoProduct()">
                               <div class="flex px-3 py-2 text-xl text-white bg-black rounded-s-xl hover:translate-x-2">
                                    <h1>See Product</h1>
                               </div>
@@ -159,9 +159,13 @@
      <!-- End Content -->
 
      <script>
-          function GotoAbout() {
-               window.location.assign('AboutPage.php');
+          const GotoProduct = () => {
+               window.location.assign('ProductPage.php');
           };
+
+          const GotoAbout = () => {
+               window.location.assign('AboutPage.php');
+          }
      </script>
 </body>
 
