@@ -32,7 +32,7 @@
                     <div class="flex gap-3">
                          <button
                               class="flex flex-row items-center justify-center gap-1 font-bold transition-all ease-in-out"
-                              onclick="GotoAbout()">
+                              onclick="GotoProduct()">
                               <div class="flex px-3 py-2 text-xl text-white bg-black rounded-s-xl hover:translate-x-2">
                                    <h1>See Product</h1>
                               </div>
@@ -60,7 +60,8 @@
                                    <i class="ri-book-2-line"></i>
                               </h1>
                               <button
-                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2">See
+                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2"
+                                   onclick="GotoProduct()">See
                                    Product <i class="ri-arrow-right-s-line"></i></button>
                          </div>
                          <div
@@ -70,7 +71,8 @@
                                    <i class="ri-book-open-line"></i>
                               </h1>
                               <button
-                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2">See
+                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2"
+                                   onclick="GotoProduct()">See
                                    Product <i class="ri-arrow-right-s-line"></i></button>
                          </div>
                          <!-- End Card -->
@@ -96,7 +98,8 @@
                                    <i class="ri-book-2-fill"></i>
                               </h1>
                               <button
-                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2">See
+                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2"
+                                   onclick="GotoProduct()">See
                                    Product <i class="ri-arrow-right-s-line"></i></button>
                          </div>
 
@@ -112,7 +115,8 @@
                               <h1 class="text-xl font-bold text-black">Buku Digital<i class="ri-smartphone-line"></i>
                               </h1>
                               <button
-                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2">See
+                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2"
+                                   onclick="GotoProduct()">See
                                    Product <i class="ri-arrow-right-s-line"></i>
                               </button>
                          </div>
@@ -123,7 +127,8 @@
                                    <i class="ri-booklet-line"></i>
                               </h1>
                               <button
-                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2">See
+                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2"
+                                   onclick="GotoProduct()">See
                                    Product <i class="ri-arrow-right-s-line"></i></button>
                          </div>
                          <!-- End Card -->
@@ -145,31 +150,30 @@
                          <div
                               class="flex flex-col gap-2 px-5 py-5 text-base font-bold text-black border-2 border-black w-96 rounded-xl">
                               <h1 class="text-2xl font-bold">Kapan saja, di mana saja</h1>
-                              <p>Anda dapat mengakses koleksi perpustakaan secara 24/7, baik dari <span
-                                        class="text-white bg-black"> komputer, tablet,
-                                        maupun
-                                        smartphone, selama ada koneksi internet.Tidak
-                                        perlu lagi terikat </span>oleh
-                                   jam buka <span class="z-50">perpustakaan </span> fisik.
+                              <p>Anda dapat mengakses koleksi perpustakaan secara 24/7, <span
+                                        class="text-white bg-black">selama ada koneksi internet.</span> Tidak
+                                   perlu lagi terikat
+                                   jam buka <span class="z-50 text-white bg-black">oleh penyimpanan buku fisik.</span>
                               </p>
                          </div>
                          <div
                               class="flex flex-col gap-2 px-5 py-5 text-base font-bold text-black border-2 border-black w-96 rounded-xl">
                               <h1 class="text-2xl font-bold">Pencarian yang mudah</h1>
-                              <p><span class="text-white bg-black"> Fitur pencarian yang canggih </span>memungkinkan
+                              <p><span class="text-white bg-black"> Fitur pencarian yang </span>memungkinkan
                                    Anda menemukan buku yang Anda cari dengan
                                    <span class="text-white bg-black"> cepat
-                                        dan akurat, berdasarkan judul, penulis, subjek, atau kata kunci lainnya. </span>
+                                        dan akurat, berdasarkan tiket dan kategori </span>
                               </p>
                          </div>
                     </div>
                     <div
                          class="z-20 flex flex-col gap-2 px-5 py-5 text-base font-bold text-black bg-white border-2 border-black w-96 rounded-xl">
                          <h1 class="text-2xl font-bold">Secara singkat <i class="ri-corner-right-down-fill"></i></h1>
-                         <p>Web Aplikasi perpustakaan buku menawarkan kemudahan, fleksibilitas, dan
-                              pengalaman membaca yang lebih beragam bagi penggunanya.</p>
+                         <p>Web aplikasi penyimpanan buku menyediakan kemudahan, fleksibilitas, dan pengalaman yang
+                              lebih bervariasi bagi penggunanya.</p>
                          <button
-                              class="px-2 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2">See
+                              class="px-2 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2"
+                              onclick="GotoProduct()">See
                               Product <i class="ri-arrow-right-s-line"></i></button>
                     </div>
                     <img src="../img/shapes-4.png" alt="Shapes Image Desc" class="absolute w-4/5 left-20 -z-20 ">
@@ -193,10 +197,6 @@
           const GotoProduct = () => {
                window.location.assign('ProductPage.php');
           };
-
-          const GotoAbout = () => {
-               window.location.assign('AboutPage.php');
-          }
      </script>
 </body>
 

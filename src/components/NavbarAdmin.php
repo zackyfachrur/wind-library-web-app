@@ -10,7 +10,8 @@
 </head>
 
 <body class="flex items-start justify-start m-auto transition-all ease-in-out">
-     <nav class="flex flex-col items-center justify-center h-full m-auto border-black border-x-2 drop-shadow-xl w-96">
+     <nav
+          class="fixed flex flex-col items-center justify-center h-full m-auto border-black border-x-2 drop-shadow-xl w-96 bg-white">
           <img src="../img/Logo-Nav.png" alt="Navbar Logo" class="mt-10 w-52">
           <ul class="flex flex-col items-start justify-start h-screen mt-10 font-bold text-black">
                <div class="flex flex-col gap-3 text-lg">
@@ -48,19 +49,6 @@
                                    class="ri-booklet-line"></i>
                               Manga</button>
                     </form>
-                    <!-- <script>
-                         const showBookList = document.getElementById('showBook');
-
-                         const showBookOfList = () => {
-                              if (showBookList.classList.contains('flex')) {
-                                   showBookList.classList.remove('flex');
-                                   showBookList.classList.add('hidden');
-                              } else {
-                                   showBookList.classList.remove('hidden');
-                                   showBookList.classList.add('flex');
-                              }
-                         }
-                    </script> -->
                     <li class="px-6 transition-all ease-in bg-white border-black rounded-full cursor-pointer border-1 hover:translate-x-1"
                          onclick="window.location.assign('addbookpage.php') "><i class="ri-user-2-line"></i>
                          Add Books</li>
