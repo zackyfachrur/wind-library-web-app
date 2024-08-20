@@ -26,12 +26,12 @@
                </div>
                <!-- End Shapes -->
                <div class="flex flex-col items-start justify-center gap-3 mt-20 mb-20 h-96">
-                    <h1 class="w-full mt-10 text-4xl font-bold text-black -z-20">Baca Buku Di <span
+                    <h1 class="w-full mt-10 text-4xl font-bold text-black -z-20"><span
                               class="z-50 px-4 text-white bg-black rounded-full">Wind
-                              Library</span> <br> Jadi Lebih Mudah.
+                              Library</span> <br>
                     </h1>
                     <p class="text-base font-semibold"><span
-                              class="px-2 font-bold text-white bg-black rounded-full">Menjual beberapa buku
+                              class="px-2 font-bold text-white bg-black rounded-full">Menyimpan beberapa buku
                               Komik,
                               Digital, Kamus dan
                               lain lain. </span>
@@ -85,7 +85,8 @@
                                    <i class="ri-book-2-line"></i>
                               </h1>
                               <button
-                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2">See
+                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2"
+                                   onclick="GotoProduct()">See
                                    Product <i class="ri-arrow-right-s-line"></i></button>
                          </div>
                          <div
@@ -93,17 +94,19 @@
                               <h1 class="text-xl font-bold text-black">Buku Digital<i class="ri-smartphone-line"></i>
                               </h1>
                               <button
-                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2">See
+                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2"
+                                   onclick="GotoProduct()">See
                                    Product <i class="ri-arrow-right-s-line"></i></button>
                          </div>
-                         <div
-                              class="flex flex-col items-center justify-center h-32 px-5 py-5 bg-white border-black border-1 drop-shadow-xl rounded-xl w-72">
+                         <div class="flex flex-col items-center justify-center h-32 px-5 py-5 bg-white border-black border-1 drop-shadow-xl rounded-xl w-72"
+                              onclick="GotoProduct()">
                               <h1 class="text-xl font-bold text-black">Buku Kamus
 
                                    <i class="ri-book-open-line"></i>
                               </h1>
                               <button
-                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2">See
+                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2"
+                                   onclick="GotoProduct()">See
                                    Product <i class="ri-arrow-right-s-line"></i></button>
                          </div>
                          <!-- End Card -->
@@ -119,18 +122,18 @@
                                    <i class="ri-book-read-line"></i></i>
                               </h1>
                               <button
-                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2">See
+                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2"
+                                   onclick="GotoProduct()">See
                                    Product <i class="ri-arrow-right-s-line"></i></button>
                          </div>
-                         <div
-                              class="flex flex-col items-center justify-center h-32 px-5 py-5 bg-white border-black border-1 drop-shadow-xl rounded-xl w-72">
+                         <div class="flex flex-col items-center justify-center h-32 px-5 py-5 bg-white border-black border-1 drop-shadow-xl rounded-xl w-72"
+                              onclick="GotoProduct()">
                               <h1 class="text-xl font-bold text-black">Buku Manga
-
                                    <i class="ri-booklet-line"></i>
                               </h1>
                               <button
                                    class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2">See
-                                   Product <i class="ri-arrow-right-s-line"></i></button>
+                                   Product <i class="ri-arrow-right-s-line" onclick="GotoProduct()"></i></button>
                          </div>
                          <div
                               class="flex flex-col items-center justify-center h-32 px-5 py-5 bg-white border-black border-1 drop-shadow-xl rounded-xl w-72">
@@ -138,7 +141,8 @@
                                    <i class="ri-book-2-fill"></i>
                               </h1>
                               <button
-                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2">See
+                                   class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2"
+                                   onclick="GotoProduct()">See
                                    Product <i class="ri-arrow-right-s-line"></i></button>
                          </div>
 
@@ -159,13 +163,13 @@
      <!-- End Content -->
 
      <script>
-          const GotoProduct = () => {
-               window.location.assign('ProductPage.php');
-          };
+     const GotoProduct = () => {
+          window.location.assign('ProductPage.php');
+     };
 
-          const GotoAbout = () => {
-               window.location.assign('AboutPage.php');
-          }
+     const GotoAbout = () => {
+          window.location.assign('AboutPage.php');
+     }
      </script>
 </body>
 

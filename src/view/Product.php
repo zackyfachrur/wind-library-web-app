@@ -1,8 +1,23 @@
 <?php
-include('db/Connection.php');
-$productId = $_POST['kategori_buku'];
-$showBook = mysqli_query($connection, "SELECT * FROM tabel_buku WHERE kategori_buku LIKE '$productId'");
-$result = mysqli_fetch_all($showBook, MYSQLI_ASSOC);
+include('./db/Connection.php');
+
+$book_ticket = $_POST['tiket_buku'];
+$book_category = $_POST['kategori_buku'];
+
+if (empty($book_ticket) and empty($book_category)) {
+     header('Location:ProductPage.php');
+}
+
+if (!empty($book_ticket) and empty($book_category)) {
+     $showBook = mysqli_query($connection, "SELECT * FROM tabel_buku WHERE tiket_buku='$book_ticket'");
+} elseif (!empty($book_category) and empty($book_ticket)) {
+     $showBook = mysqli_query($connection, "SELECT * FROM tabel_buku WHERE kategori_buku='$book_category'");
+} else {
+     $showBook = mysqli_query($connection, "SELECT * FROM tabel_buku WHERE tiket_buku='$book_ticket' AND kategori_buku='$book_category'");
+}
+
+$results = mysqli_fetch_all($showBook, MYSQLI_ASSOC);
+
 ?>
 
 
@@ -30,8 +45,8 @@ $result = mysqli_fetch_all($showBook, MYSQLI_ASSOC);
      <main>
           <!-- Start Product -->
           <section class="flex flex-col items-center justify-center w-full h-full m-auto">
-               <div class="flex flex-col items-center justify-center h-32 gap-3">
-                    <h1 class="mt-10 text-4xl font-bold text-black">Product <span
+               <div class="flex flex-col items-center justify-center gap-3 h-28">
+                    <h1 class="mt-2 text-4xl font-bold text-black">Product <span
                               class="px-2 text-white bg-black rounded-full">Wind
                               Library</span>
                     </h1>
@@ -42,29 +57,30 @@ $result = mysqli_fetch_all($showBook, MYSQLI_ASSOC);
                     class="flex flex-row items-center justify-center w-full gap-2">
                     <div class="flex flex-row gap-4 px-4 py-2 border-2 border-black rounded-xl">
                          <!-- <i class="ri-search-line"></i> -->
-                         <input type="text" placeholder="Type to search.." class="w-32 outline-none">
+                         <input type="text" placeholder="Type to search.." name="tiket_buku" id="tiket_buku"
+                              class="w-32 outline-none">
                          <div class="flex flex-row items-center justify-center">
                               <button class="px-3 py-1 font-bold text-white bg-black rounded-xl" type="button"
                                    onclick="categoriesClick()">Categories <i class="ri-arrow-down-s-line"></i></button>
 
 
-                              <ul class="absolute flex-col hidden gap-2 px-3 py-1 mt-2 font-bold text-black bg-white border-2 border-black rounded-xl bottom-72"
+                              <ul class="absolute flex-row hidden gap-2 px-3 py-1 mt-2 font-bold text-black bg-white border-2 border-black rounded-xl top-80"
                                    id="show-categories">
                                    <li class="flex gap-2"><input type="radio" name="kategori_buku" id="komik"
-                                             value="komik"><label for="komik">Komik</label>
+                                             value="komik" required><label for="komik">Komik</label>
                                    </li>
                                    <li class="flex gap-2"><input type="radio" name="kategori_buku" value="kamus"
-                                             id="kamus"><label for="kamus">Kamus</label>
+                                             id="kamus" required><label for="kamus">Kamus</label>
                                    </li>
                                    <li class="flex gap-2"><input type="radio" name="kategori_buku" value="novel"
-                                             id="novel"><label for="novel">Novel</label>
+                                             id="novel" required><label for="novel">Novel</label>
                                    </li>
                                    <li class="flex gap-2"><input type="radio" name="kategori_buku" value="majalah"
-                                             id="majalah"><label for="majalah">Majalah</label></li>
+                                             id="majalah" required><label for="majalah">Majalah</label></li>
                                    <li class="flex gap-2"><input type="radio" name="kategori_buku" value="digital"
-                                             id="digital"><label for="digital">Digital</label></li>
+                                             id="digital" required><label for="digital">Digital</label></li>
                                    <li class="flex gap-2"><input type="radio" id="manga" name="kategori_buku"
-                                             value="manga"><label for="manga">Manga</label>
+                                             value="manga" required><label for="manga">Manga</label>
                                    </li>
                               </ul>
 
@@ -80,22 +96,32 @@ $result = mysqli_fetch_all($showBook, MYSQLI_ASSOC);
 
           <!-- Deksripsi -->
           <section class="flex flex-row flex-wrap items-start justify-center h-full gap-3 mt-20 container-sm">
-
                <?php
-               foreach ($result as $results) {
+               foreach ($results as $result) {
                ?>
-               <div class="px-5 py-2 text-center text-black border-2 border-black w-72 h-36 rounded-xl">
-                    <h1 class="text-xl font-bold"><?php echo $results['nama_buku']
-                                                       ?></h1>
+                    <div class="flip-card">
+                         <div class="flip-card-inner">
+                              <div class="flip-card-front">
+                                   <h1 class="text-sm font-bold capitalize"><i class="ri-ticket-line"></i>
+                                        <?php echo $result['tiket_buku'] ?>
+                                        <p>Arahkan Mouse</p>
+                              </div>
+                              <div class="flip-card-back">
+                                   <p class="text-sm font-bold"><?php echo $result['nama_buku']
+                                                                 ?></p>
+                                   <p class="text-sm font-bold capitalize"><i class="ri-book-line"></i>
+                                        <?php echo $result['kategori_buku'] ?>
+                                   </p>
+                                   <p class="text-sm font-bold "><?php echo $result['tanggal_rilis'] ?></p>
+                                   <button
+                                        class="self-center w-40 px-3 py-1 mt-10 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-y-2"
+                                        onclick="GotoAdmin()">Learn
+                                        More
+                                        <i class="ri-arrow-right-s-line"></i></button>
+                              </div>
+                         </div>
 
-                    <p class="font-bold capitalize"><i class="ri-book-line"></i> <?php echo $results['kategori_buku'] ?>
-                    </p>
-                    <p><?php echo $results['tanggal_rilis'] ?></p>
-                    <button
-                         class="px-3 py-1 text-sm font-bold text-white transition-all ease-in-out bg-black rounded-full hover:translate-x-2">Learn
-                         More
-                         <i class="ri-arrow-right-s-line"></i></button>
-               </div>
+                    </div>
                <?php  }
                ?>
           </section>
@@ -110,21 +136,22 @@ $result = mysqli_fetch_all($showBook, MYSQLI_ASSOC);
      <!-- End Content -->
 
      <!-- JS -->
-
      <script>
-     const showCategories = document.getElementById('show-categories');
-
-     function categoriesClick() {
-          if (showCategories.classList.contains('hidden')) {
-               showCategories.classList.add('flex');
-               showCategories.classList.remove('hidden');
-          } else {
-               showCategories.classList.add('hidden');
-               showCategories.classList.remove('flex');
+          function GotoAdmin() {
+               window.location.assign('../admin/');
           }
-     };
-     </script>
+          const showCategories = document.getElementById('show-categories');
 
+          function categoriesClick() {
+               if (showCategories.classList.contains('hidden')) {
+                    showCategories.classList.add('flex');
+                    showCategories.classList.remove('hidden');
+               } else {
+                    showCategories.classList.add('hidden');
+                    showCategories.classList.remove('flex');
+               }
+          };
+     </script>
 </body>
 
 </html>

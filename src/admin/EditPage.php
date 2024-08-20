@@ -2,6 +2,10 @@
 include('./db/Connection.php');
 
 $id = $_GET['id'];
+if (empty($id)) {
+     header('Location:BookPage.php');
+     exit;
+}
 
 $query = mysqli_query($connection, "SELECT * FROM tabel_buku WHERE tiket_buku='$id'");
 $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
@@ -33,68 +37,68 @@ $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
                     <div class="flex flex-col">
                          <div class="flex gap-5 px-5 py-2">
                               <!-- Books Tiket -->
-                              <label for="books_tiket"><i
-                                        class="ri-ticket-line flex px-5 py-2 font-bold text-white transition-all ease-in bg-black border-2 border-black rounded-xl  "></i></label>
-                              <input type="text" name="books_tiket" id="books_tiket" placeholder="Your Books Ticket"
-                                   class="px-5 py-2 font-bold text-black border-2 border-black rounded-xl outline-none w-72">
+                              <label for="tiket_buku"><i
+                                        class="flex px-5 py-2 font-bold text-white transition-all ease-in bg-black border-2 border-black ri-ticket-line rounded-xl "></i></label>
+                              <input type="text" name="tiket_buku" id="tiket_buku" placeholder="Your Books Ticket"
+                                   class="px-5 py-2 font-bold text-black border-2 border-black outline-none rounded-xl w-72"
+                                   value="<?php echo $result[0]['tiket_buku'] ?>" required>
                               <!-- End Books Tiket -->
                          </div>
 
                          <div class="flex gap-5 px-5 py-2">
                               <!-- Books Name -->
-                              <label for="books_name"><i
-                                        class="ri-book-2-line flex px-5 py-2 font-bold text-white transition-all ease-in bg-black border-2 border-black rounded-xl  "></i></label>
-                              <input type="text" name="books_name" id="books_name" placeholder="Your Books Ticket"
-                                   class="px-5 py-2 font-bold text-black border-2 border-black rounded-xl outline-none w-72">
+                              <label for="nama_buku"><i
+                                        class="flex px-5 py-2 font-bold text-white transition-all ease-in bg-black border-2 border-black ri-book-2-line rounded-xl "></i></label>
+                              <input type="text" name="nama_buku" id="nama_buku" placeholder="Your Books Name"
+                                   class="px-5 py-2 font-bold text-black border-2 border-black outline-none rounded-xl w-72"
+                                   value="<?php echo $result[0]['nama_buku'] ?>" required>
                               <!-- End Books Name -->
                          </div>
-
-                         <div class="flex gap-5 px-5 py-2">
-                              <!-- Books Desc -->
-                              <label for="books_desc"><i
-                                        class="ri-blogger-line ri-ticket-line flex px-5 py-2 font-bold text-white transition-all ease-in bg-black border-2 border-black rounded-xl  "></i></label>
-                              <textarea name="books_desc" id="books_desc"
-                                   class="px-5 py-2 font-bold text-black border-2 border-black rounded-xl outline-none w-72 overflow-y-hidden"></textarea>
-                              <!-- End Books Desc -->
-                         </div>
-
                          <div class="flex gap-5 px-5 py-2">
                               <!-- Books Release -->
-                              <label for="books_release"><i
-                                        class="ri-calendar-2-line flex px-5 py-2 font-bold text-white transition-all ease-in bg-black border-2 border-black rounded-xl  "></i></label>
-                              <input type="date" name="books_release" id="books_release" placeholder="Your Books Ticket"
-                                   class="px-5 py-2 font-bold text-black border-2 border-black rounded-xl outline-none w-72">
+                              <label for="tanggal_rilis"><i
+                                        class="flex px-5 py-2 font-bold text-white transition-all ease-in bg-black border-2 border-black ri-calendar-2-line rounded-xl "></i></label>
+                              <input type="date" name="tanggal_rilis" id="tanggal_rilis" placeholder="Your Books Ticket"
+                                   value="<?php echo $result[0]['tanggal_rilis'] ?>"
+                                   class="px-5 py-2 font-bold text-black border-2 border-black outline-none rounded-xl w-72"
+                                   required>
                               <!-- End Books Release -->
                          </div>
 
-                         <div class="flex gap-5 px-5 py-2">
+                         <div class="flex gap-5 px-5 py-2" id="book_category">
                               <!-- Books Category -->
-                              <label for="books_tiket"><i
-                                        class="ri-ticket-line flex px-5 py-2 font-bold text-white transition-all ease-in bg-black border-2 border-black rounded-xl  "></i></label>
+                              <label for="kategori_buku"><i
+                                        class="flex px-5 py-2 font-bold text-white transition-all ease-in bg-black border-2 border-black ri-ticket-line rounded-xl "></i></label>
                               <div class="flex flex-col items-center justify-center">
 
-                                   <ul class="flex-col flex gap-1 px-3 w-72 py-1 font-bold text-black bg-white border-2 border-black rounded-xl bottom-40"
+                                   <ul class="flex flex-col gap-1 px-3 py-1 font-bold text-black bg-white border-2 border-black w-72 rounded-xl bottom-40"
                                         id="show-categories">
-                                        <div class="flex flex-row gap-2 justify-between">
-                                             <li class="flex gap-2"><input type="radio" name="kategori_buku"
-                                                       value="majalah" id="majalah"><label for="majalah">Majalah</label>
+                                        <div class="flex flex-row justify-between gap-2">
+                                             <li class="flex gap-2"><input type="radio" name="kategori_buku" id="komik"
+                                                       value="komik" onchange="radioInput(303)" disabled><label
+                                                       for="komik">Komik</label>
                                              </li>
                                              <li class="flex gap-2"><input type="radio" name="kategori_buku"
-                                                       value="digital" id="digital"><label for="digital">Digital</label>
+                                                       value="kamus" id="kamus" onchange="radioInput(404)"
+                                                       disabled><label for="kamus">Kamus</label>
                                              </li>
-                                             <li class="flex gap-2"><input type="radio" id="manga" name="kategori_buku"
-                                                       value="manga"><label for="manga">Manga</label>
+                                             <li class="flex gap-2"><input type="radio" name="kategori_buku"
+                                                       value="novel" id="novel" onchange="radioInput(505)"
+                                                       disabled><label for="novel">Novel</label>
                                              </li>
                                         </div>
-                                        <div class="flex flex-row gap-2 justify-between">
-                                             <li class="flex gap-2"><input type="radio" name="kategori_buku" id="komik"
-                                                       value="komik"><label for="komik">Komik</label>
+                                        <div class="flex flex-row justify-between gap-2">
+                                             <li class="flex gap-2"><input type="radio" name="kategori_buku"
+                                                       value="majalah" id="majalah" onchange="radioInput(606)"
+                                                       disabled><label for="majalah">Majalah</label>
                                              </li>
                                              <li class="flex gap-2"><input type="radio" name="kategori_buku"
-                                                       value="kamus" id="kamus"><label for="kamus">Kamus</label>
+                                                       value="digital" id="digital" onchange="radioInput(707)"
+                                                       disabled><label for="digital">Digital</label>
                                              </li>
-                                             <li class="flex gap-2"><input type="radio" name="kategori_buku"
-                                                       value="novel" id="novel"><label for="novel">Novel</label>
+                                             <li class="flex gap-2"><input type="radio" id="manga" name="kategori_buku"
+                                                       value="manga" onchange="radioInput(808)" disabled><label
+                                                       for="manga">Manga</label>
                                              </li>
                                         </div>
                                    </ul>
@@ -102,15 +106,53 @@ $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
                               <!-- End Books Category -->
                          </div>
 
+
+
+                         <div class="flex gap-5 px-5 py-2">
+                              <!-- Books Desc -->
+                              <label for="deskripsi_buku"><i
+                                        class="flex px-5 py-2 font-bold text-white transition-all ease-in bg-black border-2 border-black ri-blogger-line ri-ticket-line rounded-xl "></i></label>
+                              <textarea name="deskripsi_buku" id="deskripsi_buku"
+                                   class="px-5 py-2 overflow-y-hidden font-bold text-black border-2 border-black outline-none rounded-xl w-72"
+                                   rows="8" required><?php echo $result[0]['deskripsi_buku'] ?></textarea>
+                              <!-- End Books Desc -->
+                         </div>
+
+
                     </div>
 
-                    <button type="submit"
-                         class="flex gap-2 px-5 py-2 font-bold text-white transition-all ease-in bg-black border-2 border-black rounded-xl ">Submit<i
-                              class="ri-add-line"></i></button>
+                    <div class="flex flex-col gap-2">
+
+                         <button type="submit"
+                              class="flex gap-2 px-5 py-2 font-bold text-white transition-all ease-in bg-black border-2 border-black rounded-xl ">Submit<i
+                                   class="ri-add-line"></i></button>
+                         <button type="button"
+                              class="flex gap-2 px-5 py-2 font-bold text-black transition-all ease-in bg-white border-2 border-black rounded-xl"
+                              onclick="window.location.assign('./BookPage.php')">Cancel<i
+                                   class="ri-subtract-line"></i></button>
+                    </div>
                </form>
           </div>
      </main>
      <!-- End Main -->
+
+     <!-- JS -->
+     <script>
+     const bookTiket = document.getElementById('tiket_buku');
+     const radioInput = (p) => {
+          const bookTiketValue = bookTiket.value;
+          const newValue = `${p}`;
+          if (bookTiketValue.includes(newValue)) {
+               bookTiket.value = bookTiketValue.replace(newValue, '');
+               bookTiket.classList.remove('cursor-not-allowed');
+               bookTiket.setAttribute("readonly", true);
+          } else {
+               bookTiket.classList.add('cursor-text');
+               bookTiket.value = newValue;
+               bookTiket.removeAttribute("readonly");
+          }
+     }
+     </script>
 </body>
 
-</html>body
+</html>

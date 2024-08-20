@@ -1,14 +1,3 @@
-<?php
-include('connection.php');
-
-$books_tiket = $_POST['tiket_buku'];
-$books_name = $_POST['nama_buku'];
-$books_desc = $_POST['deskripsi_buku'];
-$books_release = $_POST['tanggal_rilis'];
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,23 +16,15 @@ $books_release = $_POST['tanggal_rilis'];
      <title>Store Web | Error</title>
 </head>
 
-<body class="h-full overflow-x-hidden">
+<body class="overflow-x-hidden h-full">
      <nav class="flex flex-col items-center justify-center h-full m-auto drop-shadow-xl w-96">
           <img src="../../img/Logo-Nav.png" alt="Navbar Logo" class="mt-10 w-52">
           <ul class="flex flex-col items-center justify-center h-full mt-10 font-bold text-black">
 
-               <h1 class="text-2xl font-bold text-center text-black"><?php try {
-                                                                           $update = mysqli_query($connection, "UPDATE tabel_buku SET tiket_buku=$books_tiket, nama_buku='$books_name', deskripsi_buku='$books_desc',tanggal_rilis='$books_release' WHERE tiket_buku='$books_tiket'");
-
-                                                                           if ($update) {
-                                                                                header('Location:../BookPage.php');
-                                                                           }
-                                                                      } catch (Exception $error) {
-                                                                           echo $error->getMessage();
-                                                                      } ?></h1>
+               <h1 class="text-2xl font-bold text-black">Woopss data tidak boleh sama!</h1>
                <div class="flex flex-col gap-3 text-lg">
                     <li class="px-6 transition-all ease-in bg-white border-black rounded-full cursor-pointer border-1 hover:translate-x-1"
-                         onclick="history.go(-1); return false">
+                         onclick="window.location.assign('../addbookpage.php') ">
                          <i class="ri-home-4-line"></i>
                          Back
                     </li>
